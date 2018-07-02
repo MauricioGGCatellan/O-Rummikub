@@ -60,6 +60,27 @@ for(i = 0; i < 8; i += 2){
     }
 }
 
+void inicializa_deck_controlado(FILE *deck_controlado, char *deck[]){
+long int i;
+int j;
+for(i = 0; i < 106; i++){
+        if(i > 0){
+        fflush(deck_controlado);
+     fseek(deck_controlado, i*3, SEEK_SET);
+     } //else if(i == 1){
+   //  fflush(deck_controlado);
+   //  fseek(deck_controlado, i*2, SEEK_SET);
+   //  }
+    for(j = 0; j < 2; j++){
+     deck[i][j] = fgetc(deck_controlado);
+
+    }
+
+    deck[i][2] = '\0';
+}
+
+}
+
 void shuffle(char *deck[], int n){
 int i;
 int j;

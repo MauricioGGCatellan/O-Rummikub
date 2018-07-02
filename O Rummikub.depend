@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1530493863 source:c:\users\maurício gg catellan\documents\github\o-rummikub\main.c
+1530537285 source:c:\users\maurício gg catellan\documents\github\o-rummikub\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Functions_and_struct_dec.h"
 
-1530468269 source:c:\users\maurício gg catellan\documents\github\o-rummikub\help_functions.c
+1530539083 source:c:\users\maurício gg catellan\documents\github\o-rummikub\help_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Functions_and_struct_dec.h"
 
-1530493156 c:\users\maurício gg catellan\documents\github\o-rummikub\functions_and_struct_dec.h
+1530537285 c:\users\maurício gg catellan\documents\github\o-rummikub\functions_and_struct_dec.h
 
 1530493156 source:c:\users\maurício gg catellan\documents\github\o-rummikub\play_functions.c
 	<stdio.h>

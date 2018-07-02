@@ -43,6 +43,7 @@ int main()
     char *a[5];
     char tmp[4];
     char tmp2[4];
+    FILE *deck_controlado;
 
 peca_a_trocar = NULL;
 peca_deslocada = NULL;
@@ -62,13 +63,19 @@ while(resposta[0] != '3'){
         scanf("%s", resposta);
         fflush(stdin);
         if(resposta[0] == '1' || resposta[0] == '2'){
+
 //alocação de memória para o deck
 for(i = 0; i < 106; i++){
     deck[i] = (char *) malloc(4*sizeof(char));
 }
-
+if(resposta[0] == '1'){
 //INICIALIZAÇÃO DAS PEÇAS NO DECK
 inicializa_deck(deck);
+}
+else{
+    deck_controlado = fopen("baralho.txt", "rt");
+    inicializa_deck_controlado(deck_controlado, deck);
+}
 
 //PRINTS INICIAIS E CRIACAO DE VETORES DAS MAOS DE JOGADORES!  //obs: o 14 é usado porque os jogadores começam com 14 peças na mão.
         printf("Jogo comecando! Diga o numero de jogadores que participarao (1 a 5): ");
@@ -106,7 +113,9 @@ inicializa_deck(deck);
         if(n_players != 1){
         //escolha de pecas que decidirao quem joga primeiro
         bandeira = 1;
+        if(resposta[0] == '1'){
         shuffle(deck, 106);
+        }
         printf("As pecas estao na mesa! Escolham uma peca para que seja decidido o primeiro a jogar (peca de 0 a 105)\n");
        while(bandeira){
         bandeira = 0;
@@ -180,7 +189,9 @@ inicializa_deck(deck);
  }
 
         //OS JOGADORES RECEBEM AS MÃOS INICIAIS
+        if(resposta[0] == '1'){
         shuffle(deck, 106);
+        }
         pos_deck = 0;
 
         for(i = 0; i < n_players; i++){

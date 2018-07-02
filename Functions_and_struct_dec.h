@@ -16,6 +16,7 @@ int joga_uma_na_mesa(int tam_combinacoes[], int pos_num_combinacoes, struct s_pe
 int coloca_a_mesa(struct s_peca *mesa, struct s_peca *pecas_a_jogar[], int k, struct s_peca *mao, int *quantia_mao, int tam_sequencias[], int *pos_num_sequencias, int *soma_points, int bandeira_first_play);
 
 void inicializa_deck(char *deck[]);
+void inicializa_deck_controlado(FILE *deck_controlado, char *deck[]);
 void shuffle(char *deck[], int n);
 int conversao(char a);
 void bubble_sort(int a[], int n);
