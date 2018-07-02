@@ -31,6 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Functions_and_struct_dec.h" />
+		<Unit filename="Help_functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Play_functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
