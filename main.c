@@ -49,6 +49,7 @@ peca_a_trocar = NULL;
 peca_deslocada = NULL;
 tmp_p2 = (struct s_peca **) malloc(sizeof(struct s_peca *));
 tmp_p2[0] = (struct s_peca *) malloc(sizeof(struct s_peca));
+pos_num_sequencias = 0;
 for(i = 0;i < 13; i++){
     nums_a_jogar[i] = -20;
 }
@@ -57,9 +58,9 @@ for(i = 0;i < 13; i++){
 //MENU
 while(resposta[0] != '3'){
         printf(">>>RUMMIKUB<<<\n");
-        printf("1. Jogar - modo aleatorio\n");
-        printf("2. Jogar - modo controlado\n");
-        printf("3. Sair\n");
+        printf("1- Jogar - modo aleatorio\n");
+        printf("2- Jogar - modo controlado\n");
+        printf("3- Sair\n");
         scanf("%s", resposta);
         fflush(stdin);
         if(resposta[0] == '1' || resposta[0] == '2'){
@@ -199,7 +200,7 @@ else{
             quantia_mao[i] = 14;
         }
 
-        printf("Jogadores preencheram as maos alternadamente! Inicio das jogadas!\n");
+        printf("Jogadores preencheram as maos! Inicio das jogadas!\n");
         quantia_mesa = 0;
         if(n_players == 1){
             pos_player = 0;

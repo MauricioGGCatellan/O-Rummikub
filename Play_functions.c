@@ -5,10 +5,10 @@
 
 void prints_de_jogada(char resp[], struct s_peca *maos, int quantia_mesa, struct s_peca *mesa){
 printf("O que deseja fazer?\n");
-printf("1. Usar pecas de sua mao na mesa\n");
-printf("2. Manipular as pecas da mesa\n");
-printf("3. Comprar uma peca\n");                                    //o problema de prints pós colocar uma peça da mão na mesa pode estar aqui.
-printf("4. Encerrar a vez\n");
+printf("1- Usar pecas de sua mao na mesa\n");
+printf("2- Manipular as pecas da mesa\n");
+printf("3- Comprar uma peca\n");                                    //o problema de prints pós colocar uma peça da mão na mesa pode estar aqui.
+printf("4- Encerrar a vez\n");
 
 //prints de mao:
 struct s_peca *mao;
@@ -73,7 +73,7 @@ if(bandeira == 1){
 for(i = 0; i < k ; i++){
 possivel_sequencia[i] = conversao(pecas_a_jogar[i]->peca[0]);
 }
-//bubble_sort(possivel_sequencia, k);
+//bubble_sort(possivel_sequencia, k);0
 int swap;
 int c;
 int d;
@@ -144,7 +144,7 @@ int j;
 int bandeira;
 
 while(1){
-printf("Deseja jogar uma nova combinacao (1) ou apenas uma peca(2)?\n");
+printf("Deseja jogar uma nova combinacao (1) ou apenas uma peca(2) ?\n");
 scanf("%s", resposta);
 if(resposta[0] == '1'){
 j = 2;
@@ -197,7 +197,7 @@ int ka;
 int bandeira;
 int bandeira2;
 int quantidade_mao;
-int pos_num_sequencia = *pos_num_sequencias;
+int pos_num_sequencia;
 int soma_pontos;
 //char swap[4];
 
@@ -205,28 +205,9 @@ soma_pontos = *soma_points;
 bandeira2 = 0;
 quantidade_mao = *quantia_mao;
 ka = k;
+pos_num_sequencia = *pos_num_sequencias;
 
 ////parte não funcionando como deveria
-/*
-for(i = 0; i < k; i++){
-sequencia[i] = conversao(pecas_a_jogar[i]->peca[0]);
-}
-
-
-//bubble sort que ordena o vetor de peças
- for (i = 0 ; i < k-1; i++)
-  {
-    for (d = 0 ; d < k - i - 1 ; d++)
-    {
-      if ( sequencia[d] > sequencia[d+1])
-      {
-        strcpy(swap, pecas_a_jogar[d]->peca);
-        strcpy(pecas_a_jogar[d]->peca, pecas_a_jogar[d+1]->peca);
-        strcpy(pecas_a_jogar[d+1]->peca, swap);
-      }
-    }
-  }
-  */
 
 if(bandeira_first_play == 1){
  for(i = 0; i < k ; i++){
@@ -302,7 +283,7 @@ int k2;
 int bandeira;
 int soma_tam;
 
- strcpy(tmp, peca_a_trocar->peca);
+    strcpy(tmp, peca_a_trocar->peca);
     strcpy(peca_a_trocar->peca, peca_a_manipular->peca);
     strcpy(peca_a_manipular->peca, tmp);
 
@@ -337,11 +318,8 @@ while(1){
     }
     i++;
 }
-/*soma_tam = soma_tam - tam_combinacoes[i-1] + 1;
-j = num_a_manipular2;
-while(j != soma_tam){
-j--;
-}*/
+
+
 k2 = i ; //análise da combinação a partir da posição k2
 
 
@@ -511,29 +489,7 @@ for(i = 0;i < tam_combinacoes[k]; i++){
 teste_combinacao = teste_combinacao_valida(i, possivel_combinacao);
 if(teste_combinacao == 1 || teste_combinacao == 0){
 //arrumando a mesa
-/*tmp_p = tmp_p2;
-i = 0;
-while(tmp_p->anterior!= NULL){
-    tmp_p = tmp_p->anterior;
-    i++;
-}                   //está na última peça (à direita)
-peca_deslocada = (struct s_peca *) malloc(sizeof(struct s_peca));
-tmp_p->anterior = peca_deslocada;
-peca_deslocada->anterior = NULL;
-for(j = 0; j < i; j++){
-    if(j == 0){
-    strcpy(tmp2, tmp_p2->anterior->peca);
-    strcpy(tmp_p2->anterior->peca, tmp);
-    } else{
-    strcpy(tmp ,tmp_p2->anterior->peca);
-    strcpy(tmp_p2->anterior->peca, tmp2);
-    strcpy(tmp2, tmp);
-    }                                                //a string da peça a trocar está em tmp (inicialmente)
-tmp_p2 = tmp_p2->anterior;
-if(tmp_p2->anterior == NULL){
-    break;
-}
-}*/
+
 soma_pontos = *soma_points;
 //acrescentando ao soma_points
 if(soma_pontos < 30){

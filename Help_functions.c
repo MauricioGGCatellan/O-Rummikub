@@ -67,10 +67,7 @@ for(i = 0; i < 106; i++){
         if(i > 0){
         fflush(deck_controlado);
      fseek(deck_controlado, i*3, SEEK_SET);
-     } //else if(i == 1){
-   //  fflush(deck_controlado);
-   //  fseek(deck_controlado, i*2, SEEK_SET);
-   //  }
+     }
     for(j = 0; j < 2; j++){
      deck[i][j] = fgetc(deck_controlado);
 
